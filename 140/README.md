@@ -26,7 +26,7 @@ What I know so far is:
 - Everything is divided by 5 at the end to keep the amplitude sane
 - The saw wave (`VarSaw`)'s frequency is being determined every 1/5 of a second using `Duty`. The values `Duty` returns are determined by `Dseq`... more on that in two bullet points
 - `LFPulse` acts as a gate controlling how long `VarSaw`'s output is audible. Higher values = longer articulation, etc.
-- `Dseq` was hard to figure out as it introduced me to a slew of array methods, as well as the adverb `.x` that is added to the * multiplication operator. Essentially the two arrays (within a larger array) defined as `a=[[4,4.5],[2,3,5,6]]` are being multiplied into a ton of permutations (`a*.x allTuples(a *.x a)*4`). `flat` reduces all of the permutations down to a single array and the `.clump` method is used to group the array into smaller arrays of 2 values (one for each channel).
+- `Dseq` was hard to figure out as it introduced me to a slew of array methods, as well as the adverb `.x` that is added to the * multiplication operator. Essentially the two arrays (within a larger array) defined as `a=[[4,4.5],[2,3,5,6]]` are being multiplied into a ton of permutations (`a*.x allTuples(a *.x a)*4`). `flat` reduces all of the permutations down to a single array and the `.clump` method is used to group the flattened array into smaller arrays of 2 values (one for each channel).
 
 ### UPDATE #2
 
@@ -40,6 +40,7 @@ From there I changed some of the values within the `Dseq` arrays. I found that k
 
 Not including spaces (though the space between *.x and allTuples is **necessary** for the code to function) the character count totals at 139. I'll settle with that for now. As we keep going this semester I will continue to review and read up. Was honestly shocked to see how much you can do with so little code in sclang. Excited to take this further.
 
+### SOURCES/VICTIMS OF THEFT
 Main reference: Bruno's version of Nathaniel's code (used to clearly define the variable a as seperate from *.x)  
 Additional info: SuperCollider documentation/help menu; class code alongs
 
